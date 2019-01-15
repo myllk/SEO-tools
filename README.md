@@ -28,7 +28,7 @@ optional arguments:
                         The output file type (txt or csv), default: csv
 ```
 
-### Example
+### Example:
 ```
 james@HADES:/mnt/e/src/SEO-tools-git$ python3 get_lang_urls.py example.txt
 domain:
