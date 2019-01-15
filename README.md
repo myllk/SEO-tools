@@ -1,7 +1,7 @@
 # SEO-tools
 Some SEO related tools created by me (and anyone else who would like to contribute)
 
-## get_lang_urls.py
+## [get_lang_urls.py](https://github.com/myllk/SEO-tools/blob/master/get_lang_urls.py)
 This script takes in a tet list of URLs and gets all the URLs with english words in and splits them into either two text files or a csv with a column for URLs and a column for whether it's the chosen language or not.
 
 ### Requirements:
