@@ -4,8 +4,8 @@
 cd "$(dirname "$0")"
 
 # make sure between 4 and 6 args (inclusive)
-if [[ "$#" -lt 4 ]] || [[ "$#" -gt 6 ]]; then
-  echo "Usage: $0 {search string} {dd api key} {dd app key} {file_prefix} [from] [to]" >&2
+if [[ "$#" -ne 6 ]]; then
+  echo "Usage: $0 {search string} {dd api key} {dd app key} {output file name} {from time} {to time}" >&2
   echo "Docs: https://docs.datadoghq.com/api/?lang=bash#get-a-list-of-logs"
   exit 1
 fi
@@ -113,7 +113,7 @@ while [[ ${NEXT_LOG_ID} != "null" ]]; do
 
     # output log lines to file
     echo ${RESPONSE} | jq -r '.logs[].content.message' >> "${OUTPUT_FILE}"
-    
+
     # get the next request ID
     NEXT_LOG_ID=$(echo ${RESPONSE} | jq -r '.nextLogId')
 done
